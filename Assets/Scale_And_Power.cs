@@ -48,52 +48,39 @@ public class Scale_And_Power : MonoBehaviour
 
 
     void FixedUpdate()
-    {
+    {        
 
-        Scaler();
+        //float rayL = xScale;
 
-        float rayL = xScale;
+        //Vector2 lasPos = GetComponent<Vector2>();
 
-        Vector2 lasPos = GetComponent<Vector2>();
+        //beamStart.y = lasPos.y + (lasPos.y / 2);
+        //beamStart.x = transform.position.x;
 
-        beamStart.y = lasPos.y + (lasPos.y / 2);
-        beamStart.x = transform.position.x;
+        //Ray2D lRay = new Ray2D(beamStart, Vector3.down);
 
-        Ray2D lRay = new Ray2D(beamStart, Vector3.down);
+        //RaycastHit2D hit = Physics2D.Raycast(beamStart, Vector2.down, rayL);
 
-        RaycastHit2D hit = Physics2D.Raycast(beamStart, Vector2.down, rayL);
+        //if (hit.collider != null)
+        //{
 
-        if (hit.collider != null)
-        {
+        //    transform.position = beamStart + (hit.point/2);
 
-            transform.position = beamStart + (hit.point/2);
+        //}
+        
+        //if (on)
+        //{
+        //    scaleRatio = -1.85f;
+        //    xScale = scaleRatio * (yPos - 1);
 
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-        if (on)
-        {
-            scaleRatio = -1.85f;
-            xScale = scaleRatio * (yPos - 1);
-
-        }
-        else
-        {
-            scaleRatio = 1.85f;
-            xScale = scaleRatio * (yPos + 1);
+        //}
+        //else
+        //{
+        //    scaleRatio = 1.85f;
+        //    xScale = scaleRatio * (yPos + 1);
 
 
-        }
+        //}
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -150,24 +137,6 @@ public class Scale_And_Power : MonoBehaviour
         //redLaser.transform.position = beamStart;
 
         StartCoroutine(PowerDown());
-
-    }
-
-    void Scaler(/*Vector2 start, Vector2 end, float scaleX*/)
-    {
-
-
-
-
-
-        //Vector2 newPos = new Vector2(hit.point.x, hit.point.y);
-
-        //scaleX = GetComponent<Transform>().localScale.x;
-
-        //float scalePos = scaleX - transform.localPosition.y;
-
-
-
 
     }
 
