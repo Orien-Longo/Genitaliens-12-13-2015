@@ -8,8 +8,10 @@ public class playerMove : MonoBehaviour
     public string axisName = "Horizontal";
     public Animator anim;
     public bool naked, firstPress, active, death, on;
-    public GameObject genitals, forcefield, robot, teleporter, gasbeast, conveyorbelt, laser, laser2, electric_floor;
+    public GameObject genitals, forcefield, robot, teleporter, gasbeast, conveyorbelt, laser /*electric_floor*/;
     public GameObject[] greenLasers;
+
+    Rigidbody2D bodyFUCKER;
 
 
 
@@ -17,6 +19,7 @@ public class playerMove : MonoBehaviour
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        bodyFUCKER = gameObject.GetComponent<Rigidbody2D>();
         naked = true;
         active = true;
         sec = 2f;
@@ -40,11 +43,6 @@ public class playerMove : MonoBehaviour
 
         coverGenitals();
 
-
-
-
-
-
     }
 
 
@@ -64,10 +62,9 @@ public class playerMove : MonoBehaviour
             //newScale.x = 1.0f;
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-
-
-
+        
         //if (naked) {
+
         transform.position += transform.right * Input.GetAxis(axisName) * speed * Time.deltaTime;
         coverGenitals();
         //}
@@ -77,9 +74,9 @@ public class playerMove : MonoBehaviour
     {
 
         //Component[] laserbeams;
-        Component[] elefloor;
+        //Component[] elefloor;
         //laserbeams = laser.GetComponentsInChildren<BoxCollider2D>();
-        elefloor = electric_floor.GetComponentsInChildren<SpriteRenderer>();
+        //elefloor = electric_floor.GetComponentsInChildren<SpriteRenderer>();
         // Security Does NOT detect you
         if (Input.GetButton("Jump") && naked)
         {
@@ -93,11 +90,11 @@ public class playerMove : MonoBehaviour
 
             }
 
-            electric_floor.GetComponent<BoxCollider2D>().enabled = false;
-            foreach (SpriteRenderer arc in elefloor)
-            {
-                arc.enabled = false;
-            }
+            //electric_floor.GetComponent<BoxCollider2D>().enabled = false;
+            //foreach (SpriteRenderer arc in elefloor)
+            //{
+            //    arc.enabled = false;
+            //}
 
 //////            // Laser beams fix
 
@@ -131,20 +128,14 @@ public class playerMove : MonoBehaviour
 
 //////            // Lasers On.
 
-            //foreach (BoxCollider2D beam in laserbeams)
+
+            //electric_floor.GetComponent<BoxCollider2D>().enabled = true;
+
+            //foreach (SpriteRenderer arc in elefloor)
             //{
-            //    beam.enabled = true;
+            //    arc.enabled = true;
             //}
-
-            electric_floor.GetComponent<BoxCollider2D>().enabled = true;
-
-            foreach (SpriteRenderer arc in elefloor)
-            {
-                arc.enabled = true;
-            }
-
-            // force field fix
-            // on = true;
+            
 
         }
         if (naked != true && speed >= .5f)
@@ -193,23 +184,9 @@ public class playerMove : MonoBehaviour
             
             foreach (GameObject greenLaser in greenLasers) { greenLaser.SetActive(true); }
 
-            //forcefield.SetActive(true);
-            //forcefield2.SetActive(true);
             active = true;
         }
-
-
-        //else
-        //{
-        //    yield return null;
-        //    forcefield.SetActive(false);
-        //    forcefield2.SetActive(false);
-        //    active = false;
-        //}
-
-
-
-        //force field keeps staying off when I tap the spacebar
+        
 
     }
 
@@ -223,31 +200,13 @@ public class playerMove : MonoBehaviour
             {
 
                 foreach (GameObject greenLaser in greenLasers) { greenLaser.SetActive(false); }
-
-                //forcefield.SetActive(false);
-                //forcefield2.SetActive(false);
+                
                 active = false;
 
 
             }
             else { StartCoroutine(SecurityActive()); }
-
-
-
-
-            //else if (naked) {
-            //    yield return null;
-            //    forcefield.SetActive(true);
-            //    forcefield2.SetActive(true);
-            //    active = true; }
-
-            //else
-            //{
-
-            //    active = true;
-            //    forcefield.SetActive(true);
-            //    forcefield2.SetActive(true);
-            //}
+            
         }
 
         /*IEnumerator SecurityDoubleCheck(){

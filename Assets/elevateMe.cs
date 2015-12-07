@@ -10,7 +10,7 @@ public class elevateMe : MonoBehaviour {
 
 	bool rider, goingUp;
 
-	int p = 3;
+	//int p = 3;
 
 	float x,y,z;
 
@@ -25,7 +25,7 @@ public class elevateMe : MonoBehaviour {
 		startTime = Time.time;
 
 		x = -7.583f;
-		z = -0.02f;
+		z = 0f;
 
 		pos1 = new Vector3 (x, 0.082f, z);
 		pos2 = new Vector3 (x, -2.50f, z);
@@ -45,7 +45,7 @@ public class elevateMe : MonoBehaviour {
 	
 
 	void Update () {
-		//int p = 3;
+		
 
 
 

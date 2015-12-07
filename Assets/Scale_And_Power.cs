@@ -3,32 +3,32 @@ using System.Collections;
 
 public class Scale_And_Power : MonoBehaviour
 {
-
+    
     private Collider2D beamCol;
-    public Ray2D laserTip;
+    //public Ray2D laserTip;
     Renderer beamVis;
 
 
 
-    public Vector2 beamStart, beamHit/*, beamArrive, beamLeave*/;
+    //public Vector2 beamStart, beamHit/*, beamArrive, beamLeave*/;
 
     //float scalePosX, scalePosY;
 
-    public float xScale, newScale, yPos, newY, scaleRatio, moveSpeed;
+    //public float xScale, newScale, yPos, newY, scaleRatio, moveSpeed;
 
     private GameObject redLaser;
 
-    bool on;
+    //bool on;
 
 
     void Start()
     {
         redLaser = this.gameObject;
         //moveSpeed = 5f;
-        xScale = redLaser.transform.localScale.x;
-        newScale = .925f;
-        yPos = redLaser.transform.localPosition.y;
-        newY = .5f;
+        //xScale = redLaser.transform.localScale.x;
+        //newScale = .925f;
+        //yPos = redLaser.transform.localPosition.y;
+        //newY = .5f;
         beamVis = redLaser.gameObject.GetComponent<Renderer>();
         beamCol = redLaser.GetComponent<BoxCollider2D>();
 
@@ -83,17 +83,17 @@ public class Scale_And_Power : MonoBehaviour
         //}
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
+    //void OnCollisionEnter2D(Collision2D other)
+    //{
 
-        if (other.gameObject.GetComponent<BoxCollider2D>()/*.CompareTag("Green Laser")*/)
-        {
-            Debug.Log("hit");
-            redLaser.transform.localScale = new Vector3(newScale, redLaser.transform.localScale.y, redLaser.transform.localScale.z);
-        }
+    //    if (other.gameObject.GetComponent<BoxCollider2D>()/*.CompareTag("Green Laser")*/)
+    //    {
+    //        Debug.Log("hit");
+    //        redLaser.transform.localScale = new Vector3(newScale, redLaser.transform.localScale.y, redLaser.transform.localScale.z);
+    //    }
 
 
-    }
+    //}
 
 
     IEnumerator PowerDown()
@@ -107,8 +107,8 @@ public class Scale_And_Power : MonoBehaviour
 
         //beamArrive = (beamStart - beamHit) / 2;
 
-        yield return new WaitForSeconds(1f);
-        on = false;
+        yield return new WaitForSeconds(1.75f);
+        //on = false;
 
         //hit = Physics2D.Raycast(transform.position, -Vector2.up);
         //if (hit.collider != null){
@@ -123,7 +123,7 @@ public class Scale_And_Power : MonoBehaviour
 
 
         yield return new WaitForSeconds(2f);
-        on = true;
+        //on = true;
         //transform.position = Vector2.Lerp(transform.position, beamHit, .25f);
         //yield return new WaitForSeconds(.25f);
         beamCol.enabled = true;

@@ -18,7 +18,7 @@ public class rayTest2D : MonoBehaviour
         lXPos = laser.position.x;
         lYPos = laser.position.y;
         scaleRatio = 1.9f;
-
+        
 
 
     }
@@ -29,8 +29,8 @@ public class rayTest2D : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(drawFrom.position, -transform.up);
         Physics2D.IgnoreCollision(hit.collider, laser.GetComponent<Collider2D>());
 
+        //Physics2D.IgnoreCollision(hit.collider, human.transform.GetComponent<BoxCollider2D>(), true);
 
-        
 
 
         Debug.DrawLine(drawFrom.position, hit.point);
@@ -45,19 +45,20 @@ public class rayTest2D : MonoBehaviour
 
 
     }
-    void OnTriggerEnter2D(RaycastHit2D other)
-    {
-        if (other.collider.CompareTag("Player"))
-        {
-            Physics2D.IgnoreCollision(rayBanHit.collider, other.collider, true);
-        }
-        else
-        {
-            Physics2D.IgnoreCollision(rayBanHit.collider, other.collider, false);
-        }
+    //void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.transform.GetComponent<BoxCollider2D>().name == ("Human"))
+    //    {
+    //        Physics2D.IgnoreCollision(rayBanHit.collider, other.transform.GetComponent<BoxCollider2D>(), true);
+            
+    //    }
+        
+    //        //Physics2D.IgnoreCollision(rayBanHit.collider, other.transform.GetComponent<BoxCollider2D>(), false);
 
         
-    }
-    
+
+
+    //}
+
 
 }
