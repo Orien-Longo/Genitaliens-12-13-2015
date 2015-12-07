@@ -16,13 +16,15 @@ public class elevateMe : MonoBehaviour {
 
 	public float speed = 1.0F;
 	private float startTime;
-	private float journeyLength1,journeyLength2,journeyLength3,journeyLength4;
+	private float journeyLength1,journeyLength2,journeyLength3,journeyLength4, ePosY;
+    private Vector2 ePos;
 
 	void Start () {
 
+        ePos = gameObject.transform.position;
+        ePosY = gameObject.transform.position.y;
 
-
-		startTime = Time.time;
+        startTime = Time.time;
 
 		x = -7.583f;
 		z = 0f;
@@ -47,7 +49,8 @@ public class elevateMe : MonoBehaviour {
 	void Update () {
 		
 
-
+            if (rider) {  ePosY += speed; }
+        transform.position = new Vector2(transform.position.x, ePosY);
 
 	
 	
