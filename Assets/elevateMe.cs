@@ -57,25 +57,7 @@ public class elevateMe : MonoBehaviour
     {
 
 
-        if (rider && gameObject.transform.position.y <= endPoint.position.y)
-        {
-            transform.Translate(Vector2.up * Time.deltaTime);
-            
-            if (gameObject.transform.position.y >= endPoint.position.y)
-            {
-                transform.position = endPoint.position;
-            }
-            StartCoroutine(WaitASec(4f));
-            goingUp = false;
-        }
-        if (gameObject.transform.position.y > startPoint.position.y && !goingUp)
-        {
-
-            transform.Translate(Vector2.down * Time.deltaTime);
-            StartCoroutine(WaitASec(4f));
-
-
-        }
+       
 
 
 
@@ -91,7 +73,7 @@ public class elevateMe : MonoBehaviour
         if (other.name == "Human")
         {
             rider = true;
-            //	StartCoroutine (RideOn());
+            StartCoroutine (WaitASec(4f));
         }
 
 
@@ -108,9 +90,29 @@ public class elevateMe : MonoBehaviour
 
     IEnumerator WaitASec(float secs)
     {
-        yield return new WaitForSeconds(secs);
+        yield return null;
+        if (rider && gameObject.transform.position.y <= endPoint.position.y && goingUp)
+        {
+            transform.Translate(Vector2.up * Time.deltaTime);
 
-        goingUp = !goingUp;
+            if (gameObject.transform.position.y >= endPoint.position.y)
+            {
+                transform.position = endPoint.position;
+            }
+            
+            goingUp = false;
+
+        }
+        yield return new WaitForSeconds(secs);
+        if (gameObject.transform.position.y > startPoint.position.y && !goingUp)
+        {
+
+            transform.Translate(Vector2.down * Time.deltaTime);
+            
+
+            goingUp = true;
+        }
+        yield return new WaitForSeconds(secs);
 
     }
 
