@@ -11,7 +11,7 @@ public class elevateMe : MonoBehaviour
 
     public Transform startPoint, endPoint;
 
-    public bool rider, goingUp;
+    public bool rider, goingUp, atStart, atEnd;
 
     //int p = 3;
 
@@ -49,6 +49,8 @@ public class elevateMe : MonoBehaviour
 
         rider = false;
         goingUp = true;
+        atStart = true;
+        atEnd = false;
 
     }
 
@@ -57,9 +59,17 @@ public class elevateMe : MonoBehaviour
     {
 
 
-       
 
 
+        if (rider && goingUp && !atEnd)
+        {
+            StartCoroutine(Up(1f));
+        }
+
+        if ((!atStart && !goingUp) || !rider)
+        {
+            StartCoroutine(Down(1f));
+        }
 
 
 
@@ -67,86 +77,88 @@ public class elevateMe : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
 
-        if (other.name == "Human")
+        if (other.CompareTag("Player"))
         {
+
             rider = true;
-            StartCoroutine (WaitASec(4f));
+
         }
 
 
     }
 
-    void OnTriggerExit(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (other.name == "Human")
+        if (other.CompareTag("Player"))
         {
+            goingUp = false;
+            atEnd = true;
             rider = false;
-            //	StartCoroutine (RideOn());
+
         }
     }
 
     IEnumerator WaitASec(float secs)
     {
-        yield return null;
-        if (rider && gameObject.transform.position.y <= endPoint.position.y && goingUp)
-        {
-            transform.Translate(Vector2.up * Time.deltaTime);
-
-            if (gameObject.transform.position.y >= endPoint.position.y)
-            {
-                transform.position = endPoint.position;
-            }
-            
-            goingUp = false;
-
-        }
         yield return new WaitForSeconds(secs);
-        if (gameObject.transform.position.y > startPoint.position.y && !goingUp)
-        {
 
-            transform.Translate(Vector2.down * Time.deltaTime);
-            
-
-            goingUp = true;
-        }
-        yield return new WaitForSeconds(secs);
 
     }
-
-    /*IEnumerator RideOn(float distCovered, float fracJourney){
-	
-		int p = 3;
-
-		if (goingUp == false){
-			yield return new WaitForSeconds(2.5f);
-			if(rider == true && p > 0){
-				for(p == 3; y > pos2.y; y -= Time.deltaTime/fracJourney){
-					Vector3 newVec
-					yield return new WaitForSeconds(2.5f);
-					p--;
-
-				}for (p == 2){
-
-					p--;
-					goingUp = true;
-				}
-			}
-		}
-	}*/
-
-    void Journey1()
+    IEnumerator Up(float secs)
     {
-        /*float distCovered = (Time.time - startTime) * speed;
-		float fracJourney = distCovered / journeyLength1;
-		for ( y > pos2.y; y -= Time.deltaTime/fracJourney ) {
-			transform.position = Vector3.Lerp (pos1, (x,y,z) , fracJourney);
-		}*/
+        yield return new WaitForSeconds(secs);
+        if (!atEnd && rider)
+        {
+
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(Vector2.up * Time.deltaTime / 3);
+            }
+
+            if (gameObject.transform.position.y > endPoint.position.y)
+            {
+                //transform.position = endPoint.position;
+                goingUp = false;
+                atEnd = true;
+                atStart = false;
+            }
+        }
+        else
+        {
+            goingUp = false;
+            atEnd = true;
+            atStart = false;
+        }
 
 
     }
+    IEnumerator Down(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        if (!atStart)
+        {
+            if (Input.GetKey(KeyCode.S) || !rider)
+            {
+                transform.Translate(Vector2.down * Time.deltaTime / 3);
+            }
+
+            if (gameObject.transform.position.y < startPoint.position.y)
+            {
+                //gameObject.transform.position = startPoint.position;
+                atStart = true;
+                goingUp = true;
+                atEnd = false;
+            }
+
+        }
+        yield return new WaitForSeconds(2f);
+
+    }
+
 
 
 }
