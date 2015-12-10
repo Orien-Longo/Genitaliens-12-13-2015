@@ -18,20 +18,20 @@ public class elevateMe : MonoBehaviour
     float x, y, z;
 
     public float speed = .01F;
-    private float startTime;
-    private float journeyLength1, journeyLength2, journeyLength3, journeyLength4, ePosY;
-    private Vector2 ePos;
+    //private float startTime;
+    //private float journeyLength1, journeyLength2, journeyLength3, journeyLength4, ePosY;
+    //private Vector2 ePos;
 
 
     void Start()
     {
 
-        ePos = gameObject.transform.position;
-        ePosY = gameObject.transform.position.y;
+        //ePos = gameObject.transform.position;
+        //ePosY = gameObject.transform.position.y;
 
 
 
-        startTime = Time.time;
+        //startTime = Time.time;
 
         //x = -7.583f;
         //z = 0f;
@@ -82,6 +82,7 @@ public class elevateMe : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            other.transform.parent = transform;
 
             rider = true;
 
@@ -94,6 +95,7 @@ public class elevateMe : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.transform.parent = null;
             goingUp = false;
             atEnd = true;
             rider = false;
@@ -114,9 +116,9 @@ public class elevateMe : MonoBehaviour
         {
 
 
-            if (Input.GetKey(KeyCode.W) || !rider)
+            if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0 || !rider)
             {
-                transform.Translate(Vector2.up * Time.deltaTime / 3);
+                transform.Translate(Vector2.up * speed * Time.smoothDeltaTime );
             }
 
             if (gameObject.transform.position.y > endPoint.position.y)
@@ -141,14 +143,14 @@ public class elevateMe : MonoBehaviour
         yield return new WaitForSeconds(secs);
         if (!atStart)
         {
-            if (Input.GetKey(KeyCode.S) )
+            if ((Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0 )&& gameObject.transform.position.y > startPoint.position.y)
             {
-                transform.Translate(Vector2.down * Time.deltaTime / 3);
+                transform.Translate(Vector2.down * speed * Time.smoothDeltaTime);
             }
 
             if (gameObject.transform.position.y < startPoint.position.y)
             {
-                //gameObject.transform.position = startPoint.position;
+                gameObject.transform.position = startPoint.position;
                 atStart = true;
                 goingUp = true;
                 atEnd = false;

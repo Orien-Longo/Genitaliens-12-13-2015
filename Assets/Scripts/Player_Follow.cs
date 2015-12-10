@@ -7,7 +7,7 @@ public class Player_Follow : MonoBehaviour
     public GameObject player, camera1;
     public Vector3 pivot, centerPoint, currentPos, playerPos;
     public float div = 10.0f;
-    bool facingRight = true;
+    //bool facingRight = true;
 
 
     void Start()

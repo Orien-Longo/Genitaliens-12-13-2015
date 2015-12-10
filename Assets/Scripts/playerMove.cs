@@ -4,14 +4,14 @@ using System.Collections;
 public class playerMove : MonoBehaviour
 {
 
-    public float speed = 2.5f, sec;
+    public float speed = 6.5f, sec;
     public string axisName = "Horizontal";
     public Animator anim;
     public bool naked, firstPress, active, death, on;
     public GameObject genitals, forcefield, robot, teleporter, gasbeast, conveyorbelt, laser /*electric_floor*/;
     public GameObject[] greenLasers;
 
-    Rigidbody2D bodyFUCKER;
+    //Rigidbody2D bodyFUCKER;
 
 
 
@@ -19,7 +19,7 @@ public class playerMove : MonoBehaviour
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
-        bodyFUCKER = gameObject.GetComponent<Rigidbody2D>();
+        //bodyFUCKER = gameObject.GetComponent<Rigidbody2D>();
         naked = true;
         active = true;
         sec = 2f;
@@ -38,16 +38,12 @@ public class playerMove : MonoBehaviour
         //StartCoroutine (SecurityDoubleCheck ());
     }
 
+   
+
+
     void Update()
     {
-
         coverGenitals();
-
-    }
-
-
-    void FixedUpdate()
-    {
         anim.SetFloat("speed", Mathf.Abs(Input.GetAxis("Horizontal")));
         if (Input.GetAxisRaw(axisName) < 0)
         {
@@ -65,7 +61,7 @@ public class playerMove : MonoBehaviour
         
         //if (naked) {
 
-        transform.position += transform.right * Input.GetAxis(axisName) * speed * Time.deltaTime;
+        transform.position += transform.right * Input.GetAxis(axisName) * speed * Time.smoothDeltaTime/4;
         coverGenitals();
         //}
     }
@@ -138,22 +134,22 @@ public class playerMove : MonoBehaviour
             
 
         }
-        if (naked != true && speed >= .5f)
+        if (naked != true && speed >= 1f)
         {
-            if (speed != .5f)
+            if (speed != 1f)
             {
-                speed -= .1f;
-                if (speed < .5f)
+                speed -= 1f;
+                if (speed < 1f)
                 {
-                    speed = .5f;
+                    speed = 1f;
 
                 }
             }
 
         }
-        else if (naked != false && speed < 2.5f)
+        else if (naked != false && speed < 6.5f)
         {
-            speed = 2.5f;
+            speed = 6.5f;
         }
         //this.SendMessage ("Detected");
         //if(naked == true)genitals.SetActive (false);
