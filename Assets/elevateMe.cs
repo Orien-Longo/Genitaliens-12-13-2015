@@ -47,10 +47,10 @@ public class elevateMe : MonoBehaviour
 
         ////StartCoroutine (RideOn());
 
-        rider = false;
-        goingUp = true;
-        atStart = true;
-        atEnd = false;
+        //rider = false;
+        //goingUp = true;
+        //atStart = true;
+        //atEnd = false;
 
     }
 
@@ -114,7 +114,7 @@ public class elevateMe : MonoBehaviour
         {
 
 
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) || !rider)
             {
                 transform.Translate(Vector2.up * Time.deltaTime / 3);
             }
@@ -141,7 +141,7 @@ public class elevateMe : MonoBehaviour
         yield return new WaitForSeconds(secs);
         if (!atStart)
         {
-            if (Input.GetKey(KeyCode.S) || !rider)
+            if (Input.GetKey(KeyCode.S) )
             {
                 transform.Translate(Vector2.down * Time.deltaTime / 3);
             }
