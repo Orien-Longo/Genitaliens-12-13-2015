@@ -70,6 +70,14 @@ public class elevateMe : MonoBehaviour
         {
             StartCoroutine(Down(1f));
         }
+        //if (!rider && transform.position.y < (player.transform.position.y - (player.transform.position.y - endPoint.position.y)))
+        //{
+        //    //if (transform.position.y < endPoint.position.y)
+        //    transform.Translate(Vector2.up * speed * Time.smoothDeltaTime);
+        //    goingUp = false;
+        //    atEnd = true;
+        //    atStart = false;
+        //}
 
 
 
@@ -116,25 +124,28 @@ public class elevateMe : MonoBehaviour
         {
 
 
-            if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0 || !rider)
+            if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0 )
             {
                 transform.Translate(Vector2.up * speed * Time.smoothDeltaTime );
             }
 
-            if (gameObject.transform.position.y > endPoint.position.y)
+            if (gameObject.transform.position.y >= endPoint.position.y)
             {
                 //transform.position = endPoint.position;
                 goingUp = false;
                 atEnd = true;
                 atStart = false;
             }
+            else
+            {
+                //if (transform.position.y < endPoint.position.y)
+                transform.Translate(Vector2.up * speed * Time.smoothDeltaTime);
+                goingUp = false;
+                atEnd = true;
+                atStart = false;
+            }
         }
-        else
-        {
-            goingUp = false;
-            atEnd = true;
-            atStart = false;
-        }
+        
 
 
     }

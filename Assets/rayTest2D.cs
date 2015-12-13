@@ -15,8 +15,7 @@ public class rayTest2D : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = true;
         lineRenderer.useWorldSpace = true;
-        lXPos = laser.position.x;
-        lYPos = laser.position.y;
+        
         scaleRatio = 1.9f;
         
 
@@ -26,6 +25,8 @@ public class rayTest2D : MonoBehaviour
 
     void Update()
     {
+        lXPos = laser.position.x;
+        lYPos = laser.position.y;
         RaycastHit2D hit = Physics2D.Raycast(drawFrom.position, -transform.up);
         Physics2D.IgnoreCollision(hit.collider, laser.GetComponent<Collider2D>());
 

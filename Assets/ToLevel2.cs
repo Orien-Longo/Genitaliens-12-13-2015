@@ -5,7 +5,7 @@ public class ToLevel2 : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+        Cursor.visible= false;
 	}
 	
 	// Update is called once per frame
@@ -14,7 +14,7 @@ public class ToLevel2 : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(){
-		Application.LoadLevel (0);
+		
 		
 	}
 }
