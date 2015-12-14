@@ -44,10 +44,10 @@ namespace UnityStandardAssets.Utility
 
             // Damp the rotation around the y-axis
             currentRotationAngleY = Mathf.LerpAngle(currentRotationAngleY, wantedRotationAngleY, rotationDamping * Time.smoothDeltaTime);
-            currentRotationAngleX = Mathf.LerpAngle(currentRotationAngleX, wantedRotationAngleX, -Time.smoothDeltaTime);
+            currentRotationAngleX = Mathf.LerpAngle(currentRotationAngleX, wantedRotationAngleX, Time.smoothDeltaTime);
 
             // Damp the height
-            currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.smoothDeltaTime);
+            currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.smoothDeltaTime *4);
             currentWidth = Mathf.Lerp(currentWidth, wantedWidth, Time.smoothDeltaTime*4);
 
             // Convert the angle into a rotation

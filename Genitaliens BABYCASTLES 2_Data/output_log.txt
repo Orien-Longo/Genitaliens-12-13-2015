@@ -1,0 +1,69 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 5500 (ID=0x1616)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.268 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initialized touch support.
+Platform assembly: C:\Users\zeror\Documents\CORE Systems\Naked Lunch\Genitaliens BABYCASTLES 2_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 44ec -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.114602 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 4783.
+Total: 1.542119 ms (FindLiveObjects: 0.274981 ms CreateObjectMapping: 0.171061 ms MarkObjects: 1.067851 ms  DeleteObjects: 0.027369 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.717739 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 4750.
+Total: 0.854452 ms (FindLiveObjects: 0.227511 ms CreateObjectMapping: 0.087241 ms MarkObjects: 0.524731 ms  DeleteObjects: 0.014540 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.284954 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 4774.
+Total: 0.982320 ms (FindLiveObjects: 0.236064 ms CreateObjectMapping: 0.103492 ms MarkObjects: 0.625229 ms  DeleteObjects: 0.017106 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.000273 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 4831.
+Total: 1.046468 ms (FindLiveObjects: 0.345544 ms CreateObjectMapping: 0.088524 ms MarkObjects: 0.590162 ms  DeleteObjects: 0.020955 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.979592 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 4798.
+Total: 0.840339 ms (FindLiveObjects: 0.210833 ms CreateObjectMapping: 0.085530 ms MarkObjects: 0.530290 ms  DeleteObjects: 0.013257 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.434633 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 4822.
+Total: 2.844753 ms (FindLiveObjects: 0.759085 ms CreateObjectMapping: 0.203563 ms MarkObjects: 1.824371 ms  DeleteObjects: 0.055167 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.553375 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 4879.
+Total: 2.899920 ms (FindLiveObjects: 0.528580 ms CreateObjectMapping: 0.309621 ms MarkObjects: 1.999709 ms  DeleteObjects: 0.059016 ms)
+
