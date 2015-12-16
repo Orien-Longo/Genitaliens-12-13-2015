@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 842bc7eb299dd974ba9c8e40c9d1b13b
+timeCreated: 1449143074
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Human Sprite sheet_0
+    21300002: Walk 1
+    21300004: Walk 2
+    21300006: Walk 3
+    21300008: Walk 4
+    21300010: Covered 1
+    21300012: Covered 2
+    21300014: Covered Shuffle
+    21300016: Idle 1
+    21300018: Idle 2
+    21300020: Idle 3
+    21300022: Idle 4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 2
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Human Sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 660
+        width: 48
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Walk 1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 660
+        width: 79
+        height: 120
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Walk 2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 660
+        width: 64
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Walk 3
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 660
+        width: 79
+        height: 120
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Walk 4
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 660
+        width: 63
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Covered 1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 504
+        width: 40
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Covered 2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 504
+        width: 40
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Covered Shuffle
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 504
+        width: 40
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Idle 1
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 504
+        width: 53
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Idle 2
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 504
+        width: 53
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Idle 3
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 504
+        width: 53
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Idle 4
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 504
+        width: 53
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
