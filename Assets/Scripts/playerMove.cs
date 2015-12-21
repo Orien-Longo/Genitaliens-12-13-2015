@@ -11,15 +11,9 @@ public class playerMove : MonoBehaviour
     public GameObject genitals, forcefield, robot, teleporter, gasbeast, conveyorbelt, laser /*electric_floor*/;
     public GameObject[] greenLasers;
 
-    //Rigidbody2D bodyFUCKER;
-
-
-
-
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
-        //bodyFUCKER = gameObject.GetComponent<Rigidbody2D>();
         naked = true;
         active = true;
         sec = 2f;
@@ -29,13 +23,7 @@ public class playerMove : MonoBehaviour
         greenLasers = GameObject.FindGameObjectsWithTag("Green Laser");
 
         on = true;
-
-        //StartCoroutine (SecurityActive());
-        //StartCoroutine (SecurityDeActive());
-
-        // Can't fix force field
-
-        //StartCoroutine (SecurityDoubleCheck ());
+        
     }
 
    
@@ -86,26 +74,12 @@ public class playerMove : MonoBehaviour
 
             }
 
-            //electric_floor.GetComponent<BoxCollider2D>().enabled = false;
-            //foreach (SpriteRenderer arc in elefloor)
-            //{
-            //    arc.enabled = false;
-            //}
-
-//////            // Laser beams fix
-
-
-            //foreach (BoxCollider2D beam in laserbeams)
-            //{
-            //    beam.enabled = false;
-            //}
-
+            
             anim.SetTrigger("pressed");
 
             teleporter.SetActive(false);
 
-            // force field fix
-            // on = false;
+           
 
 
         }
@@ -122,7 +96,7 @@ public class playerMove : MonoBehaviour
             anim.SetTrigger("released");
             teleporter.SetActive(true);
 
-//////            // Lasers On.
+           // Lasers On.
 
 
             //electric_floor.GetComponent<BoxCollider2D>().enabled = true;
@@ -151,25 +125,13 @@ public class playerMove : MonoBehaviour
         {
             speed = 6.5f;
         }
-        //this.SendMessage ("Detected");
-        //if(naked == true)genitals.SetActive (false);
-        //else genitals.SetActive (true);
+        
     }
-
-    // Need to make it so the rooms activate or deactivate when they detect you in the room 
-    // Gonna try to use colliders. We'll see how it goes
-
-    /*void OnCollisionStay2d(){
-		bool activated = false;
-		if (naked == true && activated != true) {
-
-		}
-
-	}*/
 
     IEnumerator SecurityActive()
     {
 
+        float startScale, endScale;
 
 
         yield return new WaitForSeconds(.25f);
@@ -204,28 +166,7 @@ public class playerMove : MonoBehaviour
             else { StartCoroutine(SecurityActive()); }
             
         }
-
-        /*IEnumerator SecurityDoubleCheck(){
-            if ((active == true && on == false) || (active == false && on == true)) {
-                forcefield.SetActive (true);
-                forcefield2.SetActive (true);
-                active = true;
-                on = true;
-
-            }
-        }*/
-
-
-        // LASER KILL!!!!!!!!!!!!!!
-
-        //void OnTriggerEnter2D (Collider2D other){
-
-        //	if (other.gameObject.CompareTag ("laser") && naked != false) {
-        //		laser.GetComponent<BoxCollider2D> ().enabled = false;
-        //	} else {
-        //		laser.GetComponent<BoxCollider2D> ().enabled = true;
-        //	}
-
+        
     }
 
 }

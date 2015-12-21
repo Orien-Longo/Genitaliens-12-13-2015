@@ -7,7 +7,7 @@ namespace UnityStandardAssets.Utility
 
 		// The target we are following
 		[SerializeField]
-		private Transform target;
+		public Transform target;
 		// The distance in the x-z plane to the target
 		[SerializeField]
 		private float distance = 10.0f;
@@ -47,8 +47,8 @@ namespace UnityStandardAssets.Utility
             currentRotationAngleX = Mathf.LerpAngle(currentRotationAngleX, wantedRotationAngleX, Time.smoothDeltaTime);
 
             // Damp the height
-            currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.smoothDeltaTime *4);
-            currentWidth = Mathf.Lerp(currentWidth, wantedWidth, Time.smoothDeltaTime*4);
+            currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.smoothDeltaTime *4f);
+            currentWidth = Mathf.Lerp(currentWidth, wantedWidth, Time.smoothDeltaTime*2f);
 
             // Convert the angle into a rotation
             var currentRotation = Quaternion.Euler(currentRotationAngleX, currentRotationAngleY, 0);

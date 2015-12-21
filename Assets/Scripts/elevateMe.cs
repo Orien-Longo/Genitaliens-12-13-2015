@@ -63,15 +63,15 @@ public class elevateMe : MonoBehaviour
 
 
 
-        if (rider && goingUp && !atEnd)
-        {
+        //if (rider && goingUp && !atEnd)
+        //{
             StartCoroutine(Up(1f));
-        }
+        //}
 
-        if ((!atStart && !goingUp) || !rider)
-        {
+        //if ((!atStart && !goingUp) || !rider)
+        //{
             StartCoroutine(Down(1f));
-        }
+        //}
         //if (!rider && transform.position.y < (player.transform.position.y - (player.transform.position.y - endPoint.position.y)))
         //{
         //    //if (transform.position.y < endPoint.position.y)
@@ -125,22 +125,22 @@ public class elevateMe : MonoBehaviour
     IEnumerator Up(float secs)
     {
         yield return new WaitForSeconds(secs);
-        if (!atEnd && rider)
+        if (/*!atEnd &&*/ rider)
         {
 
 
-            if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0 )
+            if ((Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0 ) && gameObject.transform.position.y < endPoint.position.y)
             {
                 transform.Translate(Vector2.up * Time.smoothDeltaTime * speed);
             }
 
-            if (gameObject.transform.position.y >= endPoint.position.y)
-            {
-                //transform.position = endPoint.position;
-                goingUp = false;
-                atEnd = true;
-                atStart = false;
-            }
+            //if (gameObject.transform.position.y >= endPoint.position.y)
+            //{
+            //    //transform.position = endPoint.position;
+            //    goingUp = false;
+            //    atEnd = true;
+            //    atStart = false;
+            //}
             //else
             //{
             //    if (transform.position.y < endPoint.position.y)
@@ -157,23 +157,23 @@ public class elevateMe : MonoBehaviour
     IEnumerator Down(float secs)
     {
         yield return new WaitForSeconds(secs);
-        if (!atStart)
+        if (rider)
         {
             if ((Input.GetKey(KeyCode.S) || Input.GetAxis("Vertical") < 0 )&& gameObject.transform.position.y > startPoint.position.y)
             {
                 transform.Translate(Vector2.down * speed * Time.smoothDeltaTime);
             }
 
-            if (gameObject.transform.position.y < startPoint.position.y)
-            {
-                gameObject.transform.position = startPoint.position;
-                atStart = true;
-                goingUp = true;
-                atEnd = false;
-            }
+            //if (gameObject.transform.position.y < startPoint.position.y)
+            //{
+            //    gameObject.transform.position = startPoint.position;
+            //    atStart = true;
+            //    goingUp = true;
+            //    atEnd = false;
+            //}
 
         }
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
 
     }
 
