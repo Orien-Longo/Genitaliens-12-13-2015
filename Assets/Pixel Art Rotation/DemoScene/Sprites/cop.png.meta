@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: 05ffa3ce22fd18046b70760b015ec3e2
 labels:
 - 2D
-timeCreated: 1427965482
+timeCreated: 1460543740
 licenseType: Store
 TextureImporter:
   fileIDToRecycleName:
@@ -49,6 +49,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -69,7 +70,7 @@ TextureImporter:
         width: 15
         height: 43
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: cop_1
       rect:
@@ -89,7 +90,7 @@ TextureImporter:
         width: 15
         height: 44
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: cop_3
       rect:
@@ -99,7 +100,7 @@ TextureImporter:
         width: 15
         height: 43
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: cop_4
       rect:
@@ -109,7 +110,7 @@ TextureImporter:
         width: 15
         height: 43
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: cop_5
       rect:
@@ -119,7 +120,7 @@ TextureImporter:
         width: 15
         height: 43
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: cop_6
       rect:
@@ -129,7 +130,7 @@ TextureImporter:
         width: 15
         height: 43
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: cop_7
       rect:
@@ -139,7 +140,7 @@ TextureImporter:
         width: 15
         height: 43
       alignment: 7
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: cop_8
       rect:
@@ -149,17 +150,7 @@ TextureImporter:
         width: 15
         height: 43
       alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: cop_9
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 57
-        width: 1
-        height: 3
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

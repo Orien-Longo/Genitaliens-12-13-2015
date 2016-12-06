@@ -19,7 +19,7 @@ Pixel art Rotation installation is as simple as any other asset in the Unity Sto
 
 
 Rotating a Sprite
-To start with Pixel Art Rotation you have to create a sprite of a size big enough to contain the original sprite and its animation as well as room for all the possible rotations. See the Important Note for more information.
+To start with Pixel Art Rotation you have to create a sprite of a size big enough to contain the original sprite and its animation as well as room for all the possible rotations. See the Important Note for more information. As of version 1.2.5 a new experimental feature has been added, you can set the script to resize the canvas of the sprite for you, this can lead to errors if the resulting canvas is exactly fitted to the sprite.
 
 Then the sprite has to be imported as an Advanced texture, and enable the Read/Write option to allow the asset to read the pixels of the sprite. The pivot of the sprite will also determine the pivot of the rotation so if you want to rotate the sprite from the center you would place the pivot, inside the Sprite Editor, in the center:
 
